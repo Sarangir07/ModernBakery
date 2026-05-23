@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, CakeSlice, Moon, Sun, MapPin } from "lucide-react";
+import { Menu, X, Moon, Sun, MapPin } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
@@ -42,17 +43,24 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "glass py-3 shadow-[0_10px_40px_rgba(32,20,12,0.12)]" : "bg-transparent py-5"
+        isScrolled
+          ? "border-b border-border bg-background py-2 shadow-[0_10px_40px_rgba(32,20,12,0.12)]"
+          : "border-b border-cream/15 bg-ink/80 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl"
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2 z-50">
-          <span className="grid h-11 w-11 place-items-center bg-redclay text-cream">
-            <CakeSlice className="h-6 w-6" />
-          </span>
-          <span className={cn("font-serif text-2xl font-black tracking-tight", isHomeTop ? "text-cream" : "text-foreground")}>
-            Modern Bakery
-          </span>
+        <Link href="/" className="z-50 flex items-center" aria-label="Modern Bakery home">
+          <Image
+            src="/modern-bakery-logo.png"
+            alt="Modern Bakery"
+            width={152}
+            height={152}
+            priority
+            className={cn(
+              "h-14 w-14 object-contain transition-all duration-300 md:h-24 md:w-24",
+              isHomeTop ? "drop-shadow-[0_8px_24px_rgba(0,0,0,0.4)]" : "drop-shadow-sm"
+            )}
+          />
         </Link>
 
         {/* Desktop Nav */}

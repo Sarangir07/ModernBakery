@@ -17,12 +17,14 @@ function getPublicSiteUrl() {
   }
 }
 
+const publicSiteUrl = getPublicSiteUrl();
+
 export const siteConfig = {
   name: "Modern Bakery",
   title: "Modern Bakery Admapur | Fresh Pav, Cakes, Puffs & Biscuits",
   description:
     "Modern Bakery in Admapur, Kolhapur serves fresh pav, breads, puffs, biscuits, pastries, cakes, and bulk bakery orders.",
-  url: getPublicSiteUrl(),
+  url: publicSiteUrl,
   phone: "+91 9823095728",
   email: "sarangisr7@gmail.com",
   address: {
@@ -37,8 +39,7 @@ export const siteConfig = {
     longitude: 73.9472912,
   },
   googleMapsUrl: "https://maps.app.goo.gl/BvwviroUbLQtUXQk9?g_st=iw",
-  image:
-    "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1332&auto=format&fit=crop",
+  image: `${publicSiteUrl}/modern-bakery-logo.png`,
 };
 
 export const localBusinessJsonLd = {

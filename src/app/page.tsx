@@ -41,7 +41,7 @@ const signatures = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative min-h-[92vh] overflow-hidden bg-ink text-cream">
+      <section className="relative min-h-[78vh] overflow-hidden bg-ink text-cream">
         <Image
           src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Fresh bakery snacks"
@@ -52,7 +52,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(26,18,11,.92)_0%,rgba(26,18,11,.72)_42%,rgba(26,18,11,.25)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background to-transparent" />
 
-        <div className="container relative z-10 mx-auto flex min-h-[92vh] items-end px-4 pb-16 pt-32 md:px-8 md:pb-20">
+        <div className="container relative z-10 mx-auto flex min-h-[78vh] items-end px-4 pb-12 pt-28 md:px-8 md:pb-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}

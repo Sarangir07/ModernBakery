@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
-  CakeSlice,
   Clock3,
   Mail,
   MapPin,
@@ -129,9 +129,13 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.35fr_.7fr_.9fr_1.05fr]">
           <div className="max-w-xl">
             <Link href="/" className="mb-7 flex items-center gap-4">
-              <span className="grid h-14 w-14 place-items-center bg-saffron text-ink shadow-[0_18px_50px_rgb(156_175_136_/_0.22)]">
-                <CakeSlice className="h-8 w-8" />
-              </span>
+              <Image
+                src="/modern-bakery-logo.png"
+                alt="Modern Bakery"
+                width={160}
+                height={160}
+                className="h-24 w-24 object-contain shadow-[0_18px_50px_rgb(156_175_136_/_0.22)] md:h-28 md:w-28"
+              />
               <span>
                 <span className="block font-serif text-3xl font-black leading-none">Modern Bakery</span>
                 <span className="mt-2 block text-xs font-black uppercase tracking-[0.22em] text-cream/55">
