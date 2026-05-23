@@ -1,9 +1,28 @@
+const productionSiteUrl = "https://modernbakery.store";
+
+function getPublicSiteUrl() {
+  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+
+  if (!configuredUrl) {
+    return productionSiteUrl;
+  }
+
+  try {
+    const url = new URL(configuredUrl);
+    const isLocalhost = url.hostname === "localhost" || url.hostname === "127.0.0.1";
+
+    return isLocalhost ? productionSiteUrl : url.origin;
+  } catch {
+    return productionSiteUrl;
+  }
+}
+
 export const siteConfig = {
   name: "Modern Bakery",
   title: "Modern Bakery Admapur | Fresh Pav, Cakes, Puffs & Biscuits",
   description:
     "Modern Bakery in Admapur, Kolhapur serves fresh pav, breads, puffs, biscuits, pastries, cakes, and bulk bakery orders.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://modernbakery.store",
+  url: getPublicSiteUrl(),
   phone: "+91 9823095728",
   email: "sarangisr7@gmail.com",
   address: {
